@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilshad Palace Hotel </title>
+    <meta name="description" content="best website in the world">
+<link rel="stylesheet" href="p2.css">
+<link rel="icon" href="../media/logo1.png">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<header class="nav">
+<img class="logo" src="../media/logo.png">
+    <h1>Dilshad Palace Hotel</h1>
+    <a href="../hot.html" class="btn">BACK</a>
+</header>
+<div class="cr">
+<section class="left">
+    <h2> location <i class="fa-solid fa-location-dot"></i></h2>
+    <p><a href="https://goo.gl/maps/mBfWL7M8vbEthyE37">Iraq,Dohuk,zakho way</a></p>
+    <h2>Opening times <i class="fa-solid fa-door-open"></i></h2>
+    <p>All days 9.00AM-11.30PM</p>
+    <h2>To communicate <i class="fa-solid fa-hashtag"></i></h2>
+    <p> phone number: 07501977101 </p>
+    <p> website: <a href="http://dilshad-palace.com/">Dilshad Palace</a> </p>
+   
+</section>
+<section class="right">
+    <div class="container">
+        <div class="image">
+            <img src="../media/d1.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="../media/d2.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="../media/d3.jpg" alt="">
+        </div>
+    
+
+        <div class="button">
+            <a onclick="nextimg(-1)" class="prev">&#10094;</a>
+            <a onclick="nextimg(1)" class="next">&#10095;</a>
+        </div>
+
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+           
+        </div>
+    </div>
+
+
+
+
+</section>
+</div>
+
+<script>
+
+    var imageno =1;
+    displayimg(imageno);
+
+    function nextimg(n){
+        displayimg(imageno += n)
+    }
+
+    function currentSlide(n){
+        displayimg(imageno = n)
+    }
+
+    function displayimg(n){
+        var i;
+        var image = document.getElementsByClassName("image");
+        var dots = document.getElementsByClassName("dot");
+
+        if(n > image.length){
+            imageno = 1;
+        }
+
+        if(n < 1){
+            imageno = image.length;
+        }
+
+        for(i=0; i < image.length; i++){
+            image[i].style.display = "none";
+        }
+
+        for(i=0; i < dots.length; i++){
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        image[imageno - 1].style.display ="block";
+        dots[imageno - 1].className += " active";
+
+    }
+
+
+</script>
+
+</body>
+</html>
